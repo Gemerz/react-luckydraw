@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import {schemeCategory20, pie} from "d3";
-import Arc from "./Arc";
 import './Style/compass.styl'
+import Wheel from './Wheel'
+import Radium from 'radium'
+
 
 class Compass extends Component {
 
@@ -18,18 +19,8 @@ class Compass extends Component {
         textArray: React.PropTypes.array
 
     }
-    static defaultProps = {
-        outerRadius: null,
-        innerRadius: null
-    }
+    static defaultProps = {}
 
-    _processData(range) {
-        let array = []
-        for (var i = 0; i < range; i++) {
-            array.push(100 / range)
-        }
-        return array
-    }
 
     _processColor() {
 
@@ -38,37 +29,28 @@ class Compass extends Component {
     render() {
 
         const props = this.props
-        const transform = `translate(${ props.size / 2},${ props.size / 2})`;
-        const data = this._processData(props.range)
-        const arcs = pie()(data);
-        const Pie = arcs.map((i, idx) => {
-            let colorIdx = idx > 19 ? idx % 20 : idx
-            return (
-                // <g className="rd3" key={idx}>
-                //     <path d={Arc()}
-                //           fill={schemeCategory20[colorIdx]}
-                //           stroke="20"/>
-                // </g>
-                <Arc key={idx}
-                     innerRadius={props.innerRadius}
-                     outerRadius={props.outerRadius}
-                     startAngle={i.startAngle}
-                     endAngle={i.endAngle}
-                     showInnerLabels
-                     fill={schemeCategory20[colorIdx]}
-                     stoke={20}
-                />
-            )
+        console.log(props.size)
 
-        })
         return (
-            <svg width={props.size} height={props.size}>
-                <g transform={transform}>
-                    {Pie}
-                </g>
-            </svg>
+            <div>
+                <div className="control__panel">
+                    <div className="compass__container" style={{
+                        ':hover': {
+                            background: '#eee'
+                        }
+
+                    }}>
+                        <Wheel
+                            {...props}
+
+                        />
+                    </div>
+                </div>
+            </div>
+
         );
     }
+  
 }
 
-export default Compass;
+export default Radium(Compass);

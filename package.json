@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "d3": "^4.4.0",
+    "radium": "^0.18.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "stylus-loader": "^2.4.0"

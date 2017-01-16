@@ -7,13 +7,15 @@ class App extends Component {
 
         return (
             <div className="App">
-                <div className="control__panel">
-                    <Compass
-                        size={1200}
-                        range={30}
-                        innerRadius={400}
-                        outerRadius={600}
+                <div className="luckdraw">
+
+                    <Compass className="compass__container"
+                             size={1200}
+                             range={30}
+                             innerRadius={400}
+                             outerRadius={600}
                     />
+
                 </div>
 
             </div>
