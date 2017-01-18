@@ -11,22 +11,26 @@ class Arc extends Component {
         innerRadius: React.PropTypes.number,
         outerRadius: React.PropTypes.number,
         labelTextFill: React.PropTypes.string,
+        labelTextRotate: React.PropTypes.number,
         valueTextFill: React.PropTypes.string,
         stoke: React.PropTypes.number,
-        sectorBorderColor: React.PropTypes.string,
         showInnerLabels: React.PropTypes.bool
     }
 
     renderInnerLabel(props, Arc) {
+        let midAngle = props.endAngle < Math.PI ? props.startAngle / 2 + props.endAngle / 2 : props.startAngle / 2 + props.endAngle / 2 + Math.PI;
+        console.log(midAngle * 180 / Math.PI);
         return (
             <text
                 className="rld-value"
-                transform={`translate(${Arc.centroid()})`}
+                transform={`translate(${Arc.centroid()}) rotate(${midAngle * 180 / Math.PI})`}
                 dy=".45em"
                 style={{
                     shapeRendering: 'crispEdges',
                     textAnchor: 'middle',
                     fill: props.valueTextFill,
+                    writingMode: 'tb',
+                    fontSize: '18px'
                 }}
             >
                 {props.text}

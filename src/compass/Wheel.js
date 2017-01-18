@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {schemeCategory20, pie} from "d3";
 import Arc from "./Arc";
-import './Style/compass.styl'
+import "./Style/compass.styl";
 
 class Wheel extends Component {
 
@@ -16,13 +16,10 @@ class Wheel extends Component {
         stoke: React.PropTypes.number,
         showInnerLabels: React.PropTypes.bool,
         textArray: React.PropTypes.array,
-        onRotate:React.PropTypes.func
+        onRotate: React.PropTypes.func
 
     }
-    static defaultProps = {
-
-
-    }
+    static defaultProps = {}
 
     _processData(range) {
         let array = []
@@ -32,7 +29,8 @@ class Wheel extends Component {
         return array
     }
 
-    _processColor() {
+    _processLabelRotate(props, key) {
+
 
     }
 
@@ -51,7 +49,8 @@ class Wheel extends Component {
                      outerRadius={props.outerRadius}
                      startAngle={i.startAngle}
                      endAngle={i.endAngle}
-                     showInnerLabels
+                     showInnerLabels={props.showInnerLabels}
+                     text={props.textArray[idx]}
                      fill={schemeCategory20[colorIdx]}
                      stoke={20}
                 />

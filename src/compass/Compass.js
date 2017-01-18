@@ -33,14 +33,14 @@ class Compass extends Component {
         return (
             <div className="compass__container">
                 <div className="control__panel">
+                    <div className="compass__arrow">
+                    </div>
                     <div className="compass__spin"
                          style={{
                              width: props.size + "px",
                              height: props.size + "px",
-                             transform: `rotate(-${180 / props.range}deg)`
+                             transform: ` rotate(-${180 / props.range}deg)`
                          }}>
-                        <div className="arrow">
-                        </div>
                         <Wheel
                             {...props}
                         />

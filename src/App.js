@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Compass from "./compass";
-import './App.styl'
+import "./App.styl";
 class App extends Component {
 
     render() {
@@ -14,6 +14,15 @@ class App extends Component {
                              range={30}
                              innerRadius={250}
                              outerRadius={500}
+                             showInnerLabels
+                             textArray={
+                                 [
+                                     '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神',
+                                     '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神',
+                                     '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神'
+
+
+                                 ]}
                     />
                 </div>
 
