@@ -10,12 +10,11 @@ class App extends Component {
                 <div className="luckdraw">
 
                     <Compass className="compass__container"
-                             size={800}
+                             size={1000}
                              range={30}
-                             innerRadius={200}
-                             outerRadius={400}
+                             innerRadius={250}
+                             outerRadius={500}
                     />
-
                 </div>
 
             </div>

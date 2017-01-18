@@ -15,7 +15,8 @@ class Wheel extends Component {
         sectorBorderColor: React.PropTypes.string,
         stoke: React.PropTypes.number,
         showInnerLabels: React.PropTypes.bool,
-        textArray: React.PropTypes.array
+        textArray: React.PropTypes.array,
+        onRotate:React.PropTypes.func
 
     }
     static defaultProps = {
@@ -58,7 +59,7 @@ class Wheel extends Component {
 
         })
         return (
-            <svg width={props.size} height={props.size}>
+            <svg width={props.size} height={props.size} onClick={props.onRotate}>
                 <g transform={transform}>
                     {Pie}
                 </g>
