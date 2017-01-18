@@ -17,7 +17,7 @@ class Compass extends Component {
         stoke: React.PropTypes.number,
         showInnerLabels: React.PropTypes.bool,
         textArray: React.PropTypes.array,
-        onRotate:React.PropTypes.func
+        onRotate: React.PropTypes.func
 
     }
     static defaultProps = {}
@@ -31,9 +31,9 @@ class Compass extends Component {
 
         const props = this.props
         return (
-            <div>
+            <div className="compass__container">
                 <div className="control__panel">
-                    <div className="compass__container"
+                    <div className="compass__spin"
                          style={{
                              width: props.size + "px",
                              height: props.size + "px",
