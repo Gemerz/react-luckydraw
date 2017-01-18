@@ -19,11 +19,11 @@ class Arc extends Component {
 
     renderInnerLabel(props, Arc) {
         let midAngle = props.endAngle < Math.PI ? props.startAngle / 2 + props.endAngle / 2 : props.startAngle / 2 + props.endAngle / 2 + Math.PI;
-        console.log(midAngle * 180 / Math.PI);
+        let textAngle= midAngle * 180 / Math.PI > 90 ? midAngle * 180 / Math.PI - 180 : midAngle * 180 / Math.PI;
         return (
             <text
                 className="rld-value"
-                transform={`translate(${Arc.centroid()}) rotate(${midAngle * 180 / Math.PI})`}
+                transform={`translate(${Arc.centroid()}) rotate(${textAngle})`}
                 dy=".45em"
                 style={{
                     shapeRendering: 'crispEdges',
