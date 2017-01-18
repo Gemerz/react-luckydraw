@@ -34,12 +34,7 @@ class Compass extends Component {
         return (
             <div>
                 <div className="control__panel">
-                    <div className="compass__container" style={{
-                        ':hover': {
-                            background: '#eee'
-                        }
-
-                    }}>
+                    <div className="compass__container">
                         <Wheel
                             {...props}
 
