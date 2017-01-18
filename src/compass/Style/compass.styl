@@ -20,7 +20,7 @@ backlight($x, $y, $spread, $size, $colorA, $colorB, $duration)
   height 100%
   display inline-block
   animation: textColor 10s ease infinite;
-  backlight 0, 6vw, 5vw, 0.85, #0fffc1, #7e0fff, 10s
+  backlight 0, 5vw, 5vw, 0.85, #0fffc1, #7e0fff, 10s
   position relative
   box-shadow 0px 10px 50px rgba(0, 0, 0, 0.85)
 
@@ -32,13 +32,13 @@ backlight($x, $y, $spread, $size, $colorA, $colorB, $duration)
   z-index 10
   text-align center
   &:before
-    content:"";
+    content: "";
     top 200%
     width 0
     height: 0
     border-left 20px solid transparent
     border-right 20px solid transparent
-    border-top 100px solid  lighten(darkred, 40%);
+    border-top 100px solid lighten(darkred, 40%);
     position relative
     z-index 10
 
@@ -66,6 +66,17 @@ backlight($x, $y, $spread, $size, $colorA, $colorB, $duration)
   width 100%
   height 100%
   z-index 2
+
+.compass__btn
+  position absolute
+  text-align center
+  bottom -50px
+  z-index 100
+  display inline-block
+  width 100%
+  .bttn-jelly.bttn-danger
+    font-size 16px
+    padding 10px 20px
 
 @keyframes animateGlow
   0%

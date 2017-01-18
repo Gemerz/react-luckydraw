@@ -19,7 +19,7 @@ class Arc extends Component {
 
     renderInnerLabel(props, Arc) {
         let midAngle = props.endAngle < Math.PI ? props.startAngle / 2 + props.endAngle / 2 : props.startAngle / 2 + props.endAngle / 2 + Math.PI;
-        let textAngle= midAngle * 180 / Math.PI > 90 ? midAngle * 180 / Math.PI - 180 : midAngle * 180 / Math.PI;
+        let textAngle = midAngle * 180 / Math.PI > 90 ? midAngle * 180 / Math.PI - 180 : midAngle * 180 / Math.PI;
         return (
             <text
                 className="rld-value"
@@ -30,7 +30,8 @@ class Arc extends Component {
                     textAnchor: 'middle',
                     fill: props.valueTextFill,
                     writingMode: 'tb',
-                    fontSize: '18px'
+                    fontSize: '18px',
+                    fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif'
                 }}
             >
                 {props.text}

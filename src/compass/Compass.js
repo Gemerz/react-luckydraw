@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "./Style/compass.styl";
+import "./Style/btn.css";
 import Wheel from "./Wheel";
 import Radium from "radium";
 
@@ -45,6 +46,9 @@ class Compass extends Component {
                             {...props}
                         />
                     </div>
+                </div>
+                <div className="compass__btn">
+                    <button className="bttn-jelly bttn-md bttn-danger">开始抽奖</button>
                 </div>
             </div>
 
