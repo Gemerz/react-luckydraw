@@ -80,7 +80,7 @@ class Compass extends Component {
                          style={{
                              width: props.size + "px",
                              height: props.size + "px",
-                             transform: `rotate(${transformRotate}deg) translate3d(0,0,0)`,
+                             transform: `rotate(${transformRotate}deg) translate3d(0,0,-1px)`,
                              transitionDuration: `${props.rotateSecond}s`
                          }}>
                         <Wheel
