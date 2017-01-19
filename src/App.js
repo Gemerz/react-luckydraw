@@ -20,6 +20,9 @@ class App extends Component {
                         fontSize={'20px'}
                         writingModel={'tb'}
                         drawButtonLabel={'lucky it'}
+                        onSuccessDrawReturn={(drawNumber) => {
+                            console.log(drawNumber)
+                        }}
                         textArray={
                             [
                                 '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神',
