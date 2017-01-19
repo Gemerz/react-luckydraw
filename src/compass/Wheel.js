@@ -10,13 +10,12 @@ class Wheel extends Component {
         range: React.PropTypes.number.isRequired,
         innerRadius: React.PropTypes.number,
         outerRadius: React.PropTypes.number,
-        labelTextFill: React.PropTypes.string,
-        valueTextFill: React.PropTypes.string,
-        sectorBorderColor: React.PropTypes.string,
         stoke: React.PropTypes.number,
         showInnerLabels: React.PropTypes.bool,
         textArray: React.PropTypes.array,
-        onDraw: React.PropTypes.bool
+        fontColor: React.PropTypes.string,
+        fontSize: React.PropTypes.string,
+        writingModel: React.PropTypes.string
 
     }
     static defaultProps = {}
@@ -47,7 +46,10 @@ class Wheel extends Component {
                      showInnerLabels={props.showInnerLabels}
                      text={props.textArray[idx]}
                      fill={schemeCategory20[colorIdx]}
-                     stoke={20}
+                     stoke={props.stoke}
+                     fontColor={props.fontColor}
+                     fontSize={props.fontSize}
+                     writingModel={props.writingModel}
                 />
             )
 

@@ -14,6 +14,11 @@ class App extends Component {
                         innerRadius={250}
                         outerRadius={500}
                         showInnerLabels
+                        drawLimitSwitch
+                        drawLimit={4}
+                        fontColor={'#000'}
+                        fontSize={'12px'}
+                        writingModel={'lr'}
                         textArray={
                             [
                                 '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神',

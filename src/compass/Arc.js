@@ -5,16 +5,16 @@ class Arc extends Component {
 
     static propTypes = {
         text: React.PropTypes.string,
-        fill: React.PropTypes.string,
         startAngle: React.PropTypes.number,
         endAngle: React.PropTypes.number,
         innerRadius: React.PropTypes.number,
         outerRadius: React.PropTypes.number,
-        labelTextFill: React.PropTypes.string,
         labelTextRotate: React.PropTypes.number,
-        valueTextFill: React.PropTypes.string,
         stoke: React.PropTypes.number,
-        showInnerLabels: React.PropTypes.bool
+        showInnerLabels: React.PropTypes.bool,
+        fontColor: React.PropTypes.string,
+        fontSize: React.PropTypes.string,
+        writingModel: React.PropTypes.string
     }
 
     renderInnerLabel(props, Arc) {
@@ -28,9 +28,9 @@ class Arc extends Component {
                 style={{
                     shapeRendering: 'crispEdges',
                     textAnchor: 'middle',
-                    fill: props.valueTextFill,
-                    writingMode: 'tb',
-                    fontSize: '18px',
+                    writingMode: props.writingModel,
+                    fontSize: props.fontSize,
+                    fill: props.fontColor,
                     fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif'
                 }}
             >

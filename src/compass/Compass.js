@@ -13,29 +13,31 @@ class Compass extends Component {
         turns: React.PropTypes.number,
         innerRadius: React.PropTypes.number,
         outerRadius: React.PropTypes.number,
-        labelTextFill: React.PropTypes.string,
-        valueTextFill: React.PropTypes.string,
-        sectorBorderColor: React.PropTypes.string,
         stoke: React.PropTypes.number,
         showInnerLabels: React.PropTypes.bool,
+        drawLimitSwitch: React.PropTypes.bool,
+        drawLimit: React.PropTypes.number,
         textArray: React.PropTypes.array,
-        startDraw: React.PropTypes.bool
-
+        fontColor: React.PropTypes.string,
+        fontSize: React.PropTypes.string,
+        writingModel: React.PropTypes.string
     }
     static defaultProps = {
         size: 800,
+        stoke: 20,
         range: 20,
         turns: 2,
-        rotateSecond: 5
+        rotateSecond: 5,
+        drawLimit: 3,
+        drawLimitSwitch: false,
+        fontColor: '#000',
+        fontSize: '18px',
+        writingModel: 'tb'
     }
 
     constructor(props) {
         super(props)
 
-        if (!('turns' in props) || !('rotateSecond' in props)) {
-            props.turns = this.defaultProps.turns
-            props.rotateSecond = this.defaultProps.rotateSecond
-        }
         this.state = {
             startDraw: false,
             drawTimes: 1,
@@ -43,9 +45,10 @@ class Compass extends Component {
         }
     }
 
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     return true
-    // }
+    shouldComponentUpdate(nextProps, nextState) {
+        return true
+    }
+
     _processRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min
     }
@@ -58,21 +61,28 @@ class Compass extends Component {
 
     _processDrawing(e) {
         e.preventDefault()
-        this.setState({
-            startDraw: true,
-            randomNumber: this._processRandomNumber(1, this.props.range),
-            drawTimes: this.state.drawTimes + 1
-        })
+        let drawTime = this.state.drawTimes
+        if (this.props.drawLimitSwitch && (drawTime - 1 < this.props.drawLimit)) {
+            this.setState({
+                startDraw: true,
+                randomNumber: this._processRandomNumber(1, this.props.range),
+                drawTimes: this.state.drawTimes + 1
+            })
+        } else {
+            alert('out of limit')
+        }
     }
 
     render() {
-
         const state = this.state
         const props = this.props
         let transformRotate = state.startDraw ? this._processDrawAngle(props.range, props.turns, state.drawTimes, state.randomNumber) : 0
-        console.log(state)
         return (
-            <div className="compass__container">
+            <div className="compass__container" style={{
+                '&:after': {
+                    animation: state.startDraw ? 'none' : ''
+                }
+            }}>
                 <div className="control__panel">
                     <div className="compass__arrow">
                     </div>
