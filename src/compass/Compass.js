@@ -22,7 +22,8 @@ class Compass extends Component {
         fontSize: React.PropTypes.string,
         writingModel: React.PropTypes.string,
         drawButtonLabel: React.PropTypes.string,
-        onSuccessDrawReturn: React.PropTypes.func
+        onSuccessDrawReturn: React.PropTypes.func,
+        onOutLimitAlert: React.PropTypes.func
     }
     static defaultProps = {
         size: 800,
@@ -80,7 +81,7 @@ class Compass extends Component {
                 this.props.onSuccessDrawReturn(this.state.randomNumber)
             }, this.props.rotateSecond * 1000)
         } else {
-            alert('out of limit')
+            this.props.onOutLimitAlert(true)
         }
     }
 
