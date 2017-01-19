@@ -19,10 +19,12 @@ backlight($x, $y, $spread, $size, $colorA, $colorB, $duration)
   width 100%
   height 100%
   display inline-block
-  animation: textColor 10s ease infinite;
-  backlight 0, 5vw, 5vw, 0.85, #0fffc1, #7e0fff, 5s
+  animation textColor 10s ease infinite
   position relative
   box-shadow 0px 10px 50px rgba(0, 0, 0, 0.85)
+  backlight 0, 5vw, 5vw, 0.85, #0fffc1, #7e0fff, 5s
+  &.rolling:after
+    animation none
 
 .compass__arrow
   position absolute

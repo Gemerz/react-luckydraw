@@ -43,7 +43,8 @@ class Compass extends Component {
         this.state = {
             startDraw: false,
             drawTimes: 1,
-            randomNumber: null
+            randomNumber: null,
+            rolling: false
         }
     }
 
@@ -67,9 +68,15 @@ class Compass extends Component {
         if (this.props.drawLimitSwitch && (drawTime - 1 < this.props.drawLimit)) {
             this.setState({
                 startDraw: true,
+                rolling: true,
                 randomNumber: this._processRandomNumber(1, this.props.range),
                 drawTimes: this.state.drawTimes + 1
             })
+            setTimeout(() => {
+                this.setState({
+                    rolling: false
+                })
+            }, this.props.rotateSecond * 1000)
         } else {
             alert('out of limit')
         }
@@ -80,11 +87,7 @@ class Compass extends Component {
         const props = this.props
         let transformRotate = state.startDraw ? this._processDrawAngle(props.range, props.turns, state.drawTimes, state.randomNumber) : 0
         return (
-            <div className="compass__container" style={{
-                '&:after': {
-                    animation: state.startDraw ? 'none' : ''
-                }
-            }}>
+            <div className={state.rolling ? 'compass__container rolling' : 'compass__container'}>
                 <div className="control__panel">
                     <div className="compass__arrow">
                     </div>
