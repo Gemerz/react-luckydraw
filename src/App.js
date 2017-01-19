@@ -7,6 +7,7 @@ class App extends Component {
 
         return (
             <div className="App">
+                <h1>React-luckydraw</h1>
                 <div className="luckdraw">
                     <Compass
                         size={1000}
@@ -19,12 +20,12 @@ class App extends Component {
                         fontColor={'#000'}
                         fontSize={'20px'}
                         writingModel={'tb'}
-                        drawButtonLabel={'lucky it'}
+                        drawButtonLabel={'start'}
                         textArray={
                             [
+                                'Love you', '龍馬精神', '再来一瓶', '送一个女朋友', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神',
                                 '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神',
-                                '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神',
-                                '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神'
+                                '再来一瓶', '龍馬精神', '再来一瓶', '龍馬精神', '再来一瓶', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神'
                             ]
                         }
                         onSuccessDrawReturn={(drawNumber) => {

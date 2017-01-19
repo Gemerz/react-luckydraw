@@ -31,7 +31,7 @@ class Wheel extends Component {
     render() {
 
         const props = this.props
-        const transform = `translate(${ props.size / 2},${ props.size / 2}) rotate(${180 / props.range})`;
+        const transform = `translate(${ props.size / 2},${ props.size / 2}) rotate(-${180 / props.range})`;
         const data = this._processData(props.range)
         const arcs = pie()(data);
         const Pie = arcs.map((i, idx) => {

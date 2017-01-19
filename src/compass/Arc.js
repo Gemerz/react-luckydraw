@@ -14,6 +14,7 @@ class Arc extends Component {
         showInnerLabels: React.PropTypes.bool,
         fontColor: React.PropTypes.string,
         fontSize: React.PropTypes.string,
+        fontFamily:React.PropTypes.string,
         writingModel: React.PropTypes.string
     }
 
