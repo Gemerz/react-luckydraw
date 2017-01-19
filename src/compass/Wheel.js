@@ -16,7 +16,7 @@ class Wheel extends Component {
         stoke: React.PropTypes.number,
         showInnerLabels: React.PropTypes.bool,
         textArray: React.PropTypes.array,
-        onRotate: React.PropTypes.func
+        onDraw: React.PropTypes.bool
 
     }
     static defaultProps = {}
@@ -29,15 +29,10 @@ class Wheel extends Component {
         return array
     }
 
-    _processLabelRotate(props, key) {
-
-
-    }
-
     render() {
 
         const props = this.props
-        const transform = `translate(${ props.size / 2},${ props.size / 2})`;
+        const transform = `translate(${ props.size / 2},${ props.size / 2}) rotate(${180 / props.range})`;
         const data = this._processData(props.range)
         const arcs = pie()(data);
         const Pie = arcs.map((i, idx) => {
@@ -58,7 +53,7 @@ class Wheel extends Component {
 
         })
         return (
-            <svg width={props.size} height={props.size} onClick={props.onRotate}>
+            <svg width={props.size} height={props.size}>
                 <g transform={transform}>
                     {Pie}
                 </g>

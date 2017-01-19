@@ -10,6 +10,7 @@ class Compass extends Component {
     static propTypes = {
         size: React.PropTypes.number.isRequired,
         range: React.PropTypes.number.isRequired,
+        turns: React.PropTypes.number,
         innerRadius: React.PropTypes.number,
         outerRadius: React.PropTypes.number,
         labelTextFill: React.PropTypes.string,
@@ -18,19 +19,58 @@ class Compass extends Component {
         stoke: React.PropTypes.number,
         showInnerLabels: React.PropTypes.bool,
         textArray: React.PropTypes.array,
-        onRotate: React.PropTypes.func
+        startDraw: React.PropTypes.bool
 
     }
-    static defaultProps = {}
+    static defaultProps = {
+        size: 800,
+        range: 20,
+        turns: 2,
+        rotateSecond: 5
+    }
 
+    constructor(props) {
+        super(props)
 
-    _processColor() {
+        if (!('turns' in props) || !('rotateSecond' in props)) {
+            props.turns = this.defaultProps.turns
+            props.rotateSecond = this.defaultProps.rotateSecond
+        }
+        this.state = {
+            startDraw: false,
+            drawTimes: 1,
+            randomNumber: null
+        }
+    }
 
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     return true
+    // }
+    _processRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    }
+
+    _processDrawAngle(range, turns, drawTimes, drawNumber) {
+        const peer = 360 / range
+        const totalAngle = 360 * turns * drawTimes + drawNumber * peer
+        return totalAngle
+    }
+
+    _processDrawing(e) {
+        e.preventDefault()
+        this.setState({
+            startDraw: true,
+            randomNumber: this._processRandomNumber(1, this.props.range),
+            drawTimes: this.state.drawTimes + 1
+        })
     }
 
     render() {
 
+        const state = this.state
         const props = this.props
+        let transformRotate = state.startDraw ? this._processDrawAngle(props.range, props.turns, state.drawTimes, state.randomNumber) : 0
+        console.log(state)
         return (
             <div className="compass__container">
                 <div className="control__panel">
@@ -40,7 +80,8 @@ class Compass extends Component {
                          style={{
                              width: props.size + "px",
                              height: props.size + "px",
-                             transform: ` rotate(-${180 / props.range}deg)`
+                             transform: `rotate(${transformRotate}deg) translate3d(0,0,0)`,
+                             transitionDuration: `${props.rotateSecond}s`
                          }}>
                         <Wheel
                             {...props}
@@ -48,7 +89,13 @@ class Compass extends Component {
                     </div>
                 </div>
                 <div className="compass__btn">
-                    <button className="bttn-jelly bttn-md bttn-danger">开始抽奖</button>
+                    <button
+                        className="bttn-jelly bttn-md bttn-danger"
+                        onClick={(e) => {
+                            this._processDrawing(e)
+                        }}>
+                        开始抽奖
+                    </button>
                 </div>
             </div>
 

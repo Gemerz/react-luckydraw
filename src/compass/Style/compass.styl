@@ -62,10 +62,11 @@ backlight($x, $y, $spread, $size, $colorA, $colorB, $duration)
   box-shadow inset 0px 2px 40px rgba(0, 0, 0, 0.45);
 
 .compass__spin
-
   width 100%
   height 100%
   z-index 2
+  transition-property transform
+  transition-timing-function ease-out forwards
 
 .compass__btn
   position absolute
