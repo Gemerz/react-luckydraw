@@ -20,7 +20,8 @@ class Compass extends Component {
         textArray: React.PropTypes.array,
         fontColor: React.PropTypes.string,
         fontSize: React.PropTypes.string,
-        writingModel: React.PropTypes.string
+        writingModel: React.PropTypes.string,
+        drawButtonLabel: React.PropTypes.string,
     }
     static defaultProps = {
         size: 800,
@@ -32,7 +33,8 @@ class Compass extends Component {
         drawLimitSwitch: false,
         fontColor: '#000',
         fontSize: '18px',
-        writingModel: 'tb'
+        writingModel: 'tb',
+        drawButtonLabel: 'Start'
     }
 
     constructor(props) {
@@ -104,7 +106,7 @@ class Compass extends Component {
                         onClick={(e) => {
                             this._processDrawing(e)
                         }}>
-                        开始抽奖
+                        {props.drawButtonLabel}
                     </button>
                 </div>
             </div>

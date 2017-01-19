@@ -17,8 +17,9 @@ class App extends Component {
                         drawLimitSwitch
                         drawLimit={4}
                         fontColor={'#000'}
-                        fontSize={'12px'}
-                        writingModel={'lr'}
+                        fontSize={'20px'}
+                        writingModel={'tb'}
+                        drawButtonLabel={'lucky it'}
                         textArray={
                             [
                                 '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神', '新年快樂', '龍馬精神',
