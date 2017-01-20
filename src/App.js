@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Compass from "./compass";
+import LuckyDraw from "./LuckyDraw";
 import "./App.styl";
 class App extends Component {
 
@@ -9,7 +9,7 @@ class App extends Component {
             <div className="App">
                 <h1>React-luckydraw</h1>
 
-                    <Compass
+                    <LuckyDraw
                         width={500}
                         height={350}
                         wheelSize={1000}

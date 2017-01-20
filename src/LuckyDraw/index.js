@@ -1,3 +1,3 @@
-import Compass from './Compass';
+import LuckyDraw from './LuckyDraw';
 
-export default Compass
+export default LuckyDraw

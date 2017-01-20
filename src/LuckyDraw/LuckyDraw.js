@@ -5,7 +5,7 @@ import Wheel from "./Wheel";
 import Radium from "radium";
 
 
-class Compass extends Component {
+class LuckyDraw extends Component {
 
     static propTypes = {
         width: React.PropTypes.number.isRequired,
@@ -129,4 +129,4 @@ class Compass extends Component {
 
 }
 
-export default Radium(Compass);
+export default Radium(LuckyDraw);

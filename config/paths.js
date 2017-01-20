@@ -43,5 +43,5 @@ module.exports = {
     ownNodeModules: resolveApp('node_modules'),
     nodePaths: nodePaths,
     appComponent: resolveApp('dist'),
-    appComponentIndexJs: resolveApp('src/compass/index.js'),
+    appComponentIndexJs: resolveApp('src/LuckyDraw/index.js'),
 };

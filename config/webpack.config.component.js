@@ -9,7 +9,7 @@ module.exports = {
 
     output: {
         path: './dist/',
-        filename: 'reactLuckyDraw.js'
+        filename: 'ReactLuckyDraw.js'
     },
 
     resolve: {
