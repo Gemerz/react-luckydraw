@@ -8,7 +8,9 @@ import Radium from "radium";
 class Compass extends Component {
 
     static propTypes = {
-        size: React.PropTypes.number.isRequired,
+        width: React.PropTypes.number.isRequired,
+        height: React.PropTypes.number.isRequired,
+        wheelSize: React.PropTypes.number.isRequired,
         range: React.PropTypes.number.isRequired,
         turns: React.PropTypes.number,
         innerRadius: React.PropTypes.number,
@@ -90,30 +92,35 @@ class Compass extends Component {
         const props = this.props
         let transformRotate = state.startDraw ? this._processDrawAngle(props.range, props.turns, state.drawTimes, state.randomNumber) : 0
         return (
-            <div className={state.rolling ? 'compass__container rolling' : 'compass__container'}>
-                <div className="control__panel">
-                    <div className="compass__arrow">
+            <div className="react_luckyDraw"style={{
+                width:props.width,
+                height:props.height
+            }}>
+                <div className={state.rolling ? 'compass__container rolling' : 'compass__container'}>
+                    <div className="control__panel">
+                        <div className="compass__arrow">
+                        </div>
+                        <div className="compass__spin"
+                             style={{
+                                 width: props.wheelSize + "px",
+                                 height: props.wheelSize + "px",
+                                 transform: `rotate(${transformRotate}deg) translate3d(0,0,-1px)`,
+                                 transitionDuration: `${props.rotateSecond}s`
+                             }}>
+                            <Wheel
+                                {...props}
+                            />
+                        </div>
                     </div>
-                    <div className="compass__spin"
-                         style={{
-                             width: props.size + "px",
-                             height: props.size + "px",
-                             transform: `rotate(${transformRotate}deg) translate3d(0,0,-1px)`,
-                             transitionDuration: `${props.rotateSecond}s`
-                         }}>
-                        <Wheel
-                            {...props}
-                        />
+                    <div className="compass__btn">
+                        <button
+                            className="bttn-jelly bttn-md bttn-danger"
+                            onClick={(e) => {
+                                this._processDrawing(e)
+                            }}>
+                            {props.drawButtonLabel}
+                        </button>
                     </div>
-                </div>
-                <div className="compass__btn">
-                    <button
-                        className="bttn-jelly bttn-md bttn-danger"
-                        onClick={(e) => {
-                            this._processDrawing(e)
-                        }}>
-                        {props.drawButtonLabel}
-                    </button>
                 </div>
             </div>
 

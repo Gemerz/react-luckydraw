@@ -6,7 +6,7 @@ import "./Style/compass.styl";
 class Wheel extends Component {
 
     static propTypes = {
-        size: React.PropTypes.number.isRequired,
+        wheelSize: React.PropTypes.number.isRequired,
         range: React.PropTypes.number.isRequired,
         innerRadius: React.PropTypes.number,
         outerRadius: React.PropTypes.number,
@@ -31,7 +31,7 @@ class Wheel extends Component {
     render() {
 
         const props = this.props
-        const transform = `translate(${ props.size / 2},${ props.size / 2}) rotate(-${180 / props.range})`;
+        const transform = `translate(${ props.wheelSize / 2},${ props.wheelSize / 2}) rotate(-${180 / props.range})`;
         const data = this._processData(props.range)
         const arcs = pie()(data);
         const Pie = arcs.map((i, idx) => {
@@ -55,7 +55,7 @@ class Wheel extends Component {
 
         })
         return (
-            <svg width={props.size} height={props.size}>
+            <svg width={props.wheelSize} height={props.wheelSize}>
                 <g transform={transform}>
                     {Pie}
                 </g>

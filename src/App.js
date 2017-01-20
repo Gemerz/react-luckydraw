@@ -8,9 +8,11 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>React-luckydraw</h1>
-                <div className="luckdraw">
+
                     <Compass
-                        size={1000}
+                        width={500}
+                        height={350}
+                        wheelSize={1000}
                         range={30}
                         innerRadius={250}
                         outerRadius={500}
@@ -39,8 +41,6 @@ class App extends Component {
 
                     />
                 </div>
-
-            </div>
         );
     }
 }
