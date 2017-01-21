@@ -1,7 +1,14 @@
 {
   "name": "react-luckydraw",
+  "author": "Gemer Cheung <gemercheung@gmail.com>",
+  "description": "Simple luckydraw component for React.",
+  "main": "lib/index.js",
   "version": "0.1.0",
-  "private": true,
+  "keywords": [
+    "react",
+    "luckydraw"
+  ],
+  "prepublish": "npm run build-lib && npm run build-css",
   "devDependencies": {
     "autoprefixer": "6.5.1",
     "babel-core": "6.17.0",
