@@ -1,13 +1,18 @@
 {
   "name": "react-luckydraw",
+  "version": "0.1.2",
   "author": "Gemer Cheung <gemercheung@gmail.com>",
   "description": "Simple luckydraw component for React.",
   "main": "lib/index.js",
-  "version": "0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gemerz/react-luckydraw.git"
+  },
   "keywords": [
     "react",
     "luckydraw"
   ],
+  "license": "ISC",
   "prepublish": "npm run build-lib && npm run build-css",
   "devDependencies": {
     "autoprefixer": "6.5.1",
@@ -67,7 +72,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "build-lib": "BABEL_ENV=production babel src/LuckyDraw -d lib",
     "build-css": "./node_modules/stylus/bin/stylus -w src/LuckyDraw/Style -o lib/LuckyDraw.css"
- },
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
