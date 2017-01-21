@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {schemeCategory20, pie} from "d3";
 import Arc from "./Arc";
-import "./Style/compass.styl";
 
 class Wheel extends Component {
 

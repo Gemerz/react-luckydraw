@@ -1,8 +1,5 @@
 import React, {Component} from "react";
-import "./Style/compass.styl";
-import "./Style/btn.css";
 import Wheel from "./Wheel";
-import Radium from "radium";
 
 
 class LuckyDraw extends Component {
@@ -129,4 +126,4 @@ class LuckyDraw extends Component {
 
 }
 
-export default Radium(LuckyDraw);
+export default LuckyDraw;

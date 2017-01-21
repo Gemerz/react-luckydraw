@@ -57,8 +57,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "build-componet": "node scripts/component.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "build-lib": "BABEL_ENV=production babel src/LuckyDraw -d lib"
   },
   "jest": {
     "collectCoverageFrom": [
