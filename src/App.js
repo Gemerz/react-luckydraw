@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import LuckyDraw from "../lib";
 import "./App.styl";
-import "./LuckyDraw/Style/compass.styl";
-import "./LuckyDraw/Style/btn.css";
+import "../lib/LuckyDraw.css";
+import "./btn.css";
 class App extends Component {
 
     render() {

@@ -58,8 +58,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "build-lib": "BABEL_ENV=production babel src/LuckyDraw -d lib"
-  },
+    "build-lib": "BABEL_ENV=production babel src/LuckyDraw -d lib",
+    "build-css": "./node_modules/stylus/bin/stylus -w src/LuckyDraw/Style -o lib/LuckyDraw.css"
+ },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
