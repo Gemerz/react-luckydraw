@@ -3,7 +3,7 @@
   "author": "Gemer Cheung <gemercheung@gmail.com>",
   "description": "Simple luckydraw component for React.",
   "main": "lib/index.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [
     "react",
     "luckydraw"

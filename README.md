@@ -4,5 +4,5 @@
 ## Installation
 
 ```js
-$ npm install --save react-modal2
+$ npm install --save react-luckydraw
 ```
