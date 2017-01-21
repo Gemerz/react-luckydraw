@@ -35,7 +35,7 @@ class App extends React.Component {
                 outerRadius={500}
                 showInnerLabels
                 drawLimitSwitch
-                drawLimit={4}
+                drawLimit={5}
                 fontColor={'#000'}
                 fontSize={'20px'}
                 writingModel={'tb'}
@@ -65,4 +65,17 @@ Property|Type|Default|Description
 width|number|500|width of luckydraw
 height|number|350|height of luckydraw
 wheelSize|number|1000|size of luckydraw Wheel
+range|number|30|range of luckydraw
+outerRadius|number|wheelSize/2|outerRadius of luckydraw Wheel
+innerRadius|number|outerRadius/2|innerRadius of luckydraw Wheel
+showInnerLabels|boolean|true|show Labels on luckydraw Wheel
+drawLimitSwitch|boolean|true|a switch of drawing wheel limit
+drawLimit|number|5|a limit for drawing times with wheel
+fontColor|string|'black'|set color for label on wheel
+fontSize|string|'black'|set size for label on wheel
+drawButtonLabel|string|'start'|set text for drawing button
+textArray|array| - |set text array for wheel label
+onSuccessDrawReturn|function| - |callback function for draw success with the draw number
+onOutLimitAlert|function| - |callback function for limit times out
+
 
