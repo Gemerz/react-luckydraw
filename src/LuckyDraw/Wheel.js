@@ -32,7 +32,7 @@ class Wheel extends Component {
         const props = this.props
         const transform = `translate(${ props.wheelSize / 2},${ props.wheelSize / 2}) rotate(-${180 / props.range})`;
         const data = this._processData(props.range)
-        const arcs = pie()(data);
+        const arcs = pie()(data).sort(null);
         const Pie = arcs.map((i, idx) => {
             let colorIdx = idx > 19 ? idx % 20 : idx
             return (

@@ -14,7 +14,7 @@ class Arc extends Component {
         showInnerLabels: React.PropTypes.bool,
         fontColor: React.PropTypes.string,
         fontSize: React.PropTypes.string,
-        fontFamily:React.PropTypes.string,
+        fontFamily: React.PropTypes.string,
         writingModel: React.PropTypes.string
     }
 
@@ -31,8 +31,7 @@ class Arc extends Component {
                     textAnchor: 'middle',
                     writingMode: props.writingModel,
                     fontSize: props.fontSize,
-                    fill: props.fontColor,
-                    fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif'
+                    fill: props.fontColor
                 }}
             >
                 {props.text}

@@ -27,7 +27,6 @@ class LuckyDraw extends Component {
     static defaultProps = {
         width: 500,
         height: 350,
-        wheelSize: this.defaultProps.width * 2,
         stoke: 20,
         range: 20,
         turns: 3,
@@ -42,7 +41,9 @@ class LuckyDraw extends Component {
 
     constructor(props) {
         super(props)
-
+        if (!('wheelSize' in props)) {
+            this.props.wheelSize = this.defaultProps.width * 2
+        }
         this.state = {
             startDraw: false,
             drawTimes: 1,
@@ -73,7 +74,7 @@ class LuckyDraw extends Component {
                 this.setState({
                     startDraw: true,
                     rolling: true,
-                    randomNumber: this._processRandomNumber(1, this.props.range),
+                    randomNumber: this._processRandomNumber(0, this.props.range - 1),
                     drawTimes: this.state.drawTimes + 1
                 })
                 setTimeout(() => {
@@ -105,7 +106,7 @@ class LuckyDraw extends Component {
                              style={{
                                  width: props.wheelSize + "px",
                                  height: props.wheelSize + "px",
-                                 transform: `rotate(${transformRotate}deg) translate3d(0,0,-1px)`,
+                                 transform: `rotate(${-transformRotate}deg) translate3d(0,0,-1px)`,
                                  transitionDuration: `${props.rotateSecond}s`
                              }}>
                             <Wheel
