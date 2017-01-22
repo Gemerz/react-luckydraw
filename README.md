@@ -1,4 +1,6 @@
 #react-luckydraw
+![](https://travis-ci.org/Gemerz/react-luckydraw.svg?branch=master)
+
 
 
 ## Installation
