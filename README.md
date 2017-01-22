@@ -64,7 +64,7 @@ Property|Type|Default|Description
 ---|---|---|---
 width|number|500|width of luckydraw
 height|number|350|height of luckydraw
-wheelSize|number|1000|size of luckydraw Wheel
+wheelSize|number|width * 2|size of luckydraw Wheel
 range|number|30|range of luckydraw
 outerRadius|number|wheelSize/2|outerRadius of luckydraw Wheel
 innerRadius|number|outerRadius/2|innerRadius of luckydraw Wheel
