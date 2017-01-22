@@ -65,22 +65,24 @@ class LuckyDraw extends Component {
 
     _processDrawing(e) {
         e.preventDefault()
-        let drawTime = this.state.drawTimes
-        if (this.props.drawLimitSwitch && (drawTime - 1 < this.props.drawLimit)) {
-            this.setState({
-                startDraw: true,
-                rolling: true,
-                randomNumber: this._processRandomNumber(1, this.props.range),
-                drawTimes: this.state.drawTimes + 1
-            })
-            setTimeout(() => {
+        if (!this.state.rolling) {
+            let drawTime = this.state.drawTimes
+            if (this.props.drawLimitSwitch && (drawTime - 1 < this.props.drawLimit)) {
                 this.setState({
-                    rolling: false
+                    startDraw: true,
+                    rolling: true,
+                    randomNumber: this._processRandomNumber(1, this.props.range),
+                    drawTimes: this.state.drawTimes + 1
                 })
-                this.props.onSuccessDrawReturn(this.state.randomNumber)
-            }, this.props.rotateSecond * 1000)
-        } else {
-            this.props.onOutLimitAlert(true)
+                setTimeout(() => {
+                    this.setState({
+                        rolling: false
+                    })
+                    this.props.onSuccessDrawReturn(this.state.randomNumber)
+                }, this.props.rotateSecond * 1000)
+            } else {
+                this.props.onOutLimitAlert(true)
+            }
         }
     }
 
@@ -89,9 +91,9 @@ class LuckyDraw extends Component {
         const props = this.props
         let transformRotate = state.startDraw ? this._processDrawAngle(props.range, props.turns, state.drawTimes, state.randomNumber) : 0
         return (
-            <div className="react_luckyDraw"style={{
-                width:props.width,
-                height:props.height
+            <div className="react_luckyDraw" style={{
+                width: props.width,
+                height: props.height
             }}>
                 <div className={state.rolling ? 'compass__container rolling' : 'compass__container'}>
                     <div className="control__panel">
