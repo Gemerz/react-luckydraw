@@ -1,8 +1,10 @@
 import React, {Component} from "react";
 import LuckyDraw from "../lib";
+import 'highlight.js/styles/googlecode.css'
 import "./App.styl";
 import "../lib/LuckyDraw.css";
 import "./btn.css";
+// import Highlight from 'react-highlight';
 class App extends Component {
 
     render() {
@@ -10,6 +12,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>React-luckydraw</h1>
+
 
                 <LuckyDraw
                     width={500}
