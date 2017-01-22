@@ -68,6 +68,8 @@ wheelSize|number|1000|size of luckydraw Wheel
 range|number|30|range of luckydraw
 outerRadius|number|wheelSize/2|outerRadius of luckydraw Wheel
 innerRadius|number|outerRadius/2|innerRadius of luckydraw Wheel
+turns|number|3| Defines how many revolutions to rotate
+rotateSecond|number|5| Define how many seconds to turn around
 showInnerLabels|boolean|true|show Labels on luckydraw Wheel
 drawLimitSwitch|boolean|true|a switch of drawing wheel limit
 drawLimit|number|5|a limit for drawing times with wheel
