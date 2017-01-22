@@ -7,8 +7,8 @@ class LuckyDraw extends Component {
     static propTypes = {
         width: React.PropTypes.number.isRequired,
         height: React.PropTypes.number.isRequired,
-        wheelSize: React.PropTypes.number.isRequired,
         range: React.PropTypes.number.isRequired,
+        wheelSize: React.PropTypes.number,
         turns: React.PropTypes.number,
         innerRadius: React.PropTypes.number,
         outerRadius: React.PropTypes.number,
@@ -25,7 +25,9 @@ class LuckyDraw extends Component {
         onOutLimitAlert: React.PropTypes.func
     }
     static defaultProps = {
-        size: 800,
+        width: 500,
+        height: 350,
+        wheelSize: this.defaultProps.width * 2,
         stoke: 20,
         range: 20,
         turns: 3,

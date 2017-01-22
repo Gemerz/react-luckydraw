@@ -72,7 +72,7 @@ showInnerLabels|boolean|true|show Labels on luckydraw Wheel
 drawLimitSwitch|boolean|true|a switch of drawing wheel limit
 drawLimit|number|5|a limit for drawing times with wheel
 fontColor|string|'black'|set color for label on wheel
-fontSize|string|'black'|set size for label on wheel
+fontSize|string|'18px'|set size for label on wheel
 drawButtonLabel|string|'start'|set text for drawing button
 textArray|array| - |set text array for wheel label
 onSuccessDrawReturn|function| - |callback function for draw success with the draw number
