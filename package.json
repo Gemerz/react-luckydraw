@@ -1,6 +1,6 @@
 {
   "name": "react-luckydraw",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Gemer Cheung <gemercheung@gmail.com>",
   "description": "Simple luckydraw component for React.",
   "main": "lib/index.js",
@@ -58,23 +58,22 @@
     "webpack": "1.14.0",
     "webpack-dev-server": "1.16.2",
     "webpack-manifest-plugin": "1.1.0",
-    "whatwg-fetch": "1.0.0"
+    "whatwg-fetch": "1.0.0",
+    "gh-pages": "^0.12.0",
+    "stylus-loader": "^2.4.0",
+    "highlight.js": "^9.9.0",
+    "react-highlight": "^0.9.0"
   },
   "dependencies": {
     "d3": "^4.4.0",
-    "gh-pages": "^0.12.0",
-    "highlight.js": "^9.9.0",
-    "radium": "^0.18.1",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-highlight": "^0.9.0",
-    "stylus-loader": "^2.4.0"
+    "react-dom": "^15.4.1"
   },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "build-lib": "BABEL_ENV=production babel src/LuckyDraw -d lib",
+    "build-lib": "BABEL_ENV=production babel src/LuckyDraw -d lib --ignore spec.js,test.js",
     "build-css": "./node_modules/stylus/bin/stylus -w src/LuckyDraw/Style -o lib/LuckyDraw.css",
     "deploy": "gh-pages -d build"
   },
