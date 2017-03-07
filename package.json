@@ -4,7 +4,7 @@
   "author": "Gemer Cheung <gemercheung@gmail.com>",
   "description": "Simple luckydraw component for React.",
   "main": "lib/index.js",
-  "homepage": "http://gemer.xyz/react-luckydraw",
+  "homepage": "http://blog.gemer.xyz/react-luckydraw",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Gemerz/react-luckydraw.git"
@@ -40,7 +40,9 @@
     "file-loader": "0.9.0",
     "filesize": "3.3.0",
     "fs-extra": "0.30.0",
+    "gh-pages": "^0.12.0",
     "gzip-size": "3.0.0",
+    "highlight.js": "^9.9.0",
     "html-webpack-plugin": "2.24.0",
     "http-proxy-middleware": "0.17.2",
     "jest": "17.0.2",
@@ -48,31 +50,34 @@
     "object-assign": "4.1.0",
     "path-exists": "2.1.0",
     "postcss-loader": "1.0.0",
+    "prettier": "^0.21.0",
     "promise": "7.1.1",
     "react-dev-utils": "^0.4.2",
+    "react-highlight": "^0.9.0",
     "recursive-readdir": "2.1.0",
     "strip-ansi": "3.0.1",
     "style-loader": "0.13.1",
     "stylus": "^0.54.5",
+    "stylus-loader": "^2.4.0",
+    "sw-precache": "^5.0.0",
     "url-loader": "0.5.7",
     "webpack": "1.14.0",
     "webpack-dev-server": "1.16.2",
     "webpack-manifest-plugin": "1.1.0",
-    "whatwg-fetch": "1.0.0",
-    "gh-pages": "^0.12.0",
-    "stylus-loader": "^2.4.0",
-    "highlight.js": "^9.9.0",
-    "react-highlight": "^0.9.0"
+    "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
     "d3": "^4.4.0",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "styled-components": "^1.4.3"
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js && npm run gen-service-worker",
+    "format": "prettier --write 'src/**/*.{js,jsx}' '*.{js,jsx}' 'cosmos/**/*.{js,jsx}' --single-quote",
     "test": "node scripts/test.js --env=jsdom",
+    "gen-service-worker": "sw-precache --config=sw-precache-config.js",
     "build-lib": "BABEL_ENV=production babel src/LuckyDraw -d lib --ignore spec.js,test.js",
     "build-css": "./node_modules/stylus/bin/stylus -w src/LuckyDraw/Style -o lib/LuckyDraw.css",
     "deploy": "gh-pages -d build"
