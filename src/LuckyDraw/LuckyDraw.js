@@ -19,6 +19,7 @@ class LuckyDraw extends Component {
     fontSize: React.PropTypes.string,
     writingModel: React.PropTypes.string,
     drawButtonLabel: React.PropTypes.string,
+    ArabicLabel: React.PropTypes.bool,
     onSuccessDrawReturn: React.PropTypes.func,
     onOutLimitAlert: React.PropTypes.func
   };
@@ -34,7 +35,9 @@ class LuckyDraw extends Component {
     fontColor: '#000',
     fontSize: '18px',
     writingModel: 'tb',
-    drawButtonLabel: 'Start'
+    drawButtonLabel: 'Start',
+    ArabicLabel: true,
+    textArray: []
   };
 
   constructor(props) {

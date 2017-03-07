@@ -3,7 +3,10 @@ import { arc } from 'd3';
 
 class Arc extends Component {
   static propTypes = {
-    text: React.PropTypes.string,
+    text: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ]),
     startAngle: React.PropTypes.number,
     endAngle: React.PropTypes.number,
     innerRadius: React.PropTypes.number,

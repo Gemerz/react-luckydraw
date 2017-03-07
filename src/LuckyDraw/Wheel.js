@@ -32,7 +32,9 @@ class Wheel extends Component {
     const arcs = pie()(data).sort(null);
     const Pie = arcs.map((i, idx) => {
       let colorIdx = idx > 19 ? idx % 20 : idx;
-      const textLabel = props.textArray[idx] ? props.textArray[idx] : idx + 1;
+
+      const textLabel = !props.ArabicLabel ? props.textArray[idx] : idx + 1;
+
       return (
         <Arc
           key={idx}

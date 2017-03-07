@@ -64,7 +64,7 @@ class App extends Component {
             fontSize={'20px'}
             writingModel={'lr'}
             drawButtonLabel={'start'}
-            textArray={textArrays}
+            ArabicLabel
             onSuccessDrawReturn={drawNumber => {
               window.alert(textArrays[drawNumber]);
             }}
