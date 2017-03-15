@@ -7,38 +7,6 @@ import './btn.css';
 // import Highlight from 'react-highlight';
 class App extends Component {
   render() {
-    const textArrays = [
-      '1',
-      '2',
-      '3',
-      '4',
-      '5',
-      '6',
-      '7',
-      '8',
-      '9',
-      '10',
-      '11',
-      '12',
-      '13',
-      '14',
-      '15',
-      '16',
-      '17',
-      '18',
-      '19',
-      '20',
-      '21',
-      '22',
-      '23',
-      '24',
-      '25',
-      '26',
-      '27',
-      '28',
-      '29',
-      '30'
-    ];
 
     return (
       <div className="App">
@@ -66,7 +34,7 @@ class App extends Component {
             drawButtonLabel={'start'}
             ArabicLabel
             onSuccessDrawReturn={drawNumber => {
-              window.alert(textArrays[drawNumber]);
+              window.alert(drawNumber);
             }}
             onOutLimitAlert={limit => {
               if (limit) {
