@@ -36,7 +36,7 @@ class LuckyDraw extends Component {
     fontSize: '18px',
     writingModel: 'tb',
     drawButtonLabel: 'Start',
-    ArabicLabel: true,
+    ArabicLabel: false,
     textArray: []
   };
 

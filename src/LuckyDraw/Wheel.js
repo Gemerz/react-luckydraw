@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { schemeCategory20, pie } from 'd3';
+import React, {Component} from 'react';
+import {schemeCategory20, pie} from 'd3';
 import Arc from './Arc';
 
 class Wheel extends Component {
@@ -32,32 +32,31 @@ class Wheel extends Component {
     const arcs = pie()(data).sort(null);
     const Pie = arcs.map((i, idx) => {
       let colorIdx = idx > 19 ? idx % 20 : idx;
-
-      const textLabel = !props.ArabicLabel ? props.textArray[idx] : idx + 1;
+      const textLabel = !props.ArabicLabel ? props.textArray[idx] ? props.textArray[idx] : idx + 1 : idx + 1;
 
       return (
-        <Arc
-          key={idx}
-          innerRadius={props.innerRadius}
-          outerRadius={props.outerRadius}
-          startAngle={i.startAngle}
-          endAngle={i.endAngle}
-          showInnerLabels={props.showInnerLabels}
-          text={textLabel}
-          fill={schemeCategory20[colorIdx]}
-          stoke={props.stoke}
-          fontColor={props.fontColor}
-          fontSize={props.fontSize}
-          writingModel={props.writingModel}
-        />
+          <Arc
+              key={idx}
+              innerRadius={props.innerRadius}
+              outerRadius={props.outerRadius}
+              startAngle={i.startAngle}
+              endAngle={i.endAngle}
+              showInnerLabels={props.showInnerLabels}
+              text={textLabel}
+              fill={schemeCategory20[colorIdx]}
+              stoke={props.stoke}
+              fontColor={props.fontColor}
+              fontSize={props.fontSize}
+              writingModel={props.writingModel}
+          />
       );
     });
     return (
-      <svg width={props.wheelSize} height={props.wheelSize}>
-        <g transform={transform}>
-          {Pie}
-        </g>
-      </svg>
+        <svg width={props.wheelSize} height={props.wheelSize}>
+          <g transform={transform}>
+            {Pie}
+          </g>
+        </svg>
     );
   }
 }
