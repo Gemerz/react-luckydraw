@@ -1,5 +1,1 @@
-export default class Confetti{
-
-
-
-}
+export default class Confetti {}

@@ -30,6 +30,7 @@
   height: 50px;
   width: 100%;
   top: 0;
+  left:0;
   z-index: 10;
   text-align: center;
 }
