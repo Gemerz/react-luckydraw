@@ -29,11 +29,12 @@ class Wheel extends Component {
     const props = this.props;
     const transform = `translate(${props.wheelSize / 2},${props.wheelSize / 2}) rotate(-${180 / props.range})`;
     const data = this._processData(props.range);
-    const arcs = pie()(data).sort(null);
+    const arcs = pie()(data).sort();
     const Pie = arcs.map((i, idx) => {
       let colorIdx = idx > 19 ? idx % 20 : idx;
-
-      const textLabel = !props.ArabicLabel ? props.textArray[idx] : idx + 1;
+      const textLabel = !props.ArabicLabel
+        ? props.textArray[idx] ? props.textArray[idx] : idx + 1
+        : idx + 1;
 
       return (
         <Arc
