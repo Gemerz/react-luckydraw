@@ -1,4 +1,6 @@
 #react-luckydraw
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Gemerz/react-luckydraw.svg)](https://greenkeeper.io/)
 ![](https://travis-ci.org/Gemerz/react-luckydraw.svg?branch=master)
 
 
